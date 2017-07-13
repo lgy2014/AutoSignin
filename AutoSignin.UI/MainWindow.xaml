@@ -1,0 +1,49 @@
+﻿<Window x:Class="AutoSignin.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EHR系统签到器" Height="650" Width="999" WindowStartupLocation="CenterScreen" Icon="bear_polar.ico">
+    <Grid x:Name="grid" Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="grid2" Margin="5" Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="初始化Url:" />
+            <TextBox x:Name="txtUrl" Grid.Column="1" />
+            <Button x:Name="btnGo" Content="打开首页" Grid.Column="2" Click="btnGo_Click" />
+            <TextBlock Text="Cookie:" Grid.Row="1" />
+            <TextBox x:Name="txtCookie" Grid.Column="1" Grid.Row="1" />
+        </Grid>
+        <StackPanel Grid.Row="1">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Width" Value="90" />
+                    <Setter Property="Margin" Value="10 10 10 10" />
+                </Style>
+            </StackPanel.Resources>
+            <Button x:Name="btnList" Content="我的考勤" Click="btnList_Click" />
+            <Button x:Name="btnReqQuery" Content="签卡查询" Click="btnReqQuery_Click" />
+            <Button x:Name="btnStartSignIn" Content="签到" Click="btnStartSignIn_Click"/>
+            <Button x:Name="btnStartSignOut" Content="签退" Click="btnStartSignOut_Click"/>
+            <TextBlock Text="签卡日期:" />
+            <DatePicker x:Name="dpicker" SelectedDateFormat="Short" FirstDayOfWeek="Monday" DisplayDateStart="2017/6/1" DisplayDateEnd="2020/1/1" />
+            <CheckBox x:Name="chk" Content="自动执行" Checked="chk_Checked" Unchecked="chk_Unchecked" />
+            <CheckBox x:Name="chkShutdown" Content="自动关机" />
+        </StackPanel>
+        <GridSplitter Grid.Column="1" Grid.Row="1" Width="5" Background="AliceBlue"></GridSplitter>
+    </Grid>
+</Window>

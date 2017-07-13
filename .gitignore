@@ -1,0 +1,6 @@
+*.ini
+*.user
+bin
+.vs
+obj
+packages
